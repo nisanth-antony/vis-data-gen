@@ -1,0 +1,46 @@
+textarea {
+    width: 97.5%;
+    margin: 1rem;
+    padding: 20px;
+  }
+  .clipboard {
+    margin-left: 1rem;
+  }
+  .input-btn {
+    margin: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    height: 3rem;
+  }
+  .fetchBtn {
+    align-items: right;
+    margin-left: 1rem;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .homeBtn {
+    margin-right: 1rem;
+  }
+  
+  .select-worksite{
+    margin-left: 10px;
+  }
+
+  .example-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+
+  #example-radio-group-label{
+    margin: 5px;
+    padding: 12px;
+  }
+  
+  .example-radio-button {
+    margin: 5px 10px 5px 5px;
+  }

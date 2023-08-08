@@ -1,0 +1,47 @@
+<div>
+    <mat-toolbar>
+            <span>Vendor Integration System</span>
+            <span class="example-spacer"></span>
+            <button class="homeBtn" mat-raised-button (click)="home()"><mat-icon>home</mat-icon>Home</button>
+    </mat-toolbar>
+</div>
+<div class="second">
+    <form [formGroup]="visForm" action="">
+        <div class="worksite-cursorValue">
+            <div class="input-box">
+                <input type="text" placeholder="Worksite ID" formControlName="worksiteId" />
+                <input type="text" placeholder="Enter the cursor value" formControlName="cursor" />
+            </div>
+            <div class="search">
+                <button (click)="startEventStream()">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="date">
+        <span class="date-text">{{ cursor }}</span>
+    </div>
+</div>
+<div class="third" #autoScroll>
+    VIS Data - total of {{events.length}} events and counting.
+    <ng-container *ngFor="let event of events">
+        <div class="event">
+            <ng-container *ngIf="event.event === 'upsert'">
+                <span class="upsert">
+                    {{ event.data }}
+                </span>
+            </ng-container>
+            <ng-container *ngIf="event.event === 'delete'">
+                <span class="delete">
+                    {{ event.data }}
+                </span>
+            </ng-container>
+            <ng-container *ngIf="event.event === 'keep-alive'">
+                <span class="keep-alive">
+                    {{ event.data }}
+                </span>
+            </ng-container>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,34 @@
+textarea {
+    width: 97.5%;
+    margin: 1rem;
+    padding: 20px;
+  }
+  .clipboard {
+    margin-left: 1rem;
+  }
+  .input-btn {
+    margin: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    height: 3rem;
+  }
+  .fetchBtn {
+    align-items: right;
+    margin-left: 1rem;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .homeBtn {
+    margin-right: 1rem;
+  }
+  
+  #dataDisplay{
+    padding: 30px;
+    margin: 2rem;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    min-height: 80%;
+  }

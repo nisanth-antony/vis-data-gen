@@ -1,0 +1,142 @@
+<nav ngbNav #nav="ngbNav" class="nav-tabs">
+    <!-- <ng-container ngbNavItem>
+        <a ngbNavLink>Asset Info</a>
+        <ng-template ngbNavContent>
+            <div class="input-btn">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Enter no. of Items</mat-label>
+                        <input matInput placeholder="1,2,3...n" [(ngModel)]="inputValueAsset"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                </form>
+                <button class="fetchBtn" (click)="fetchAssetData()" mat-raised-button color="accent"> Fetch
+                    Data</button>
+            </div>
+            <div>
+                <textarea cols="30" rows="15" [(ngModel)]="assetData"></textarea><br>
+                <button mat-raised-button class="clipboard" [cdkCopyToClipboard]="assetData">Copy to clipboard</button>
+            </div>
+        </ng-template>
+    </ng-container> -->
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Streak</a>
+        <ng-template ngbNavContent>
+            <div class="input-btn">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Enter no. of Items</mat-label>
+                        <input matInput placeholder="1,2,3...n" [(ngModel)]="inputValueStreak"
+                            [ngModelOptions]="{standalone: true}"/>
+                    </mat-form-field>
+                    <mat-form-field class="select-worksite">
+                        <mat-label>Select Worksite</mat-label>
+                            <mat-select [formControl]="selectedWorksite" name="worksite">
+                                <mat-option *ngFor="let worksite of worksites" [value]="worksite">
+                                {{worksite}}
+                                </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </form>
+                <button class="fetchBtn" (click)="fetchStreakData()" mat-raised-button color="accent"> Fetch
+                    Data</button>
+                <button mat-raised-button class="clipboard" [cdkCopyToClipboard]="streakData">Copy to clipboard</button>
+            </div>
+            <div>
+                <textarea cols="30" rows="15" [(ngModel)]="streakData"></textarea><br>
+            </div>
+        </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Tin</a>
+        <ng-template ngbNavContent>
+            <div class="input-btn">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Enter no. of Items</mat-label>
+                        <input matInput placeholder="1,2,3...n" [(ngModel)]="inputValueTin"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                    <mat-form-field class="select-worksite">
+                        <mat-label>Select Worksite</mat-label>
+                            <mat-select [formControl]="selectedWorksite" name="worksite">
+                                <mat-option *ngFor="let worksite of worksites" [value]="worksite">
+                                {{worksite}}
+                                </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </form>
+                <button class="fetchBtn" (click)="fetchTinData()" mat-raised-button color="accent"> Fetch
+                    Data</button>
+                    <button mat-raised-button class="clipboard" [cdkCopyToClipboard]="tinData">Copy to clipboard</button>
+                
+            </div>
+            <div>
+                <textarea cols="30" rows="15" [(ngModel)]="tinData"></textarea><br>
+            </div>
+        </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Survey</a>
+        <ng-template ngbNavContent>
+            <div class="input-btn">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Enter no. of Items</mat-label>
+                        <input matInput placeholder="1,2,3...n" [(ngModel)]="inputValueSurvey"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                    <mat-form-field class="select-worksite">
+                        <mat-label>Select Worksite</mat-label>
+                            <mat-select [formControl]="selectedWorksite" name="worksite">
+                                <mat-option *ngFor="let worksite of worksites" [value]="worksite">
+                                {{worksite}}
+                                </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </form>
+                <button class="fetchBtn" (click)="fetchSurveyData()" mat-raised-button color="accent"> Fetch
+                    Data</button>
+                <button mat-raised-button class="clipboard" [cdkCopyToClipboard]="surveyData">Copy to clipboard</button>
+
+            </div>
+            <div>
+                <textarea cols="30" rows="15" [(ngModel)]="surveyData"></textarea><br>
+            </div>
+        </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+        <a ngbNavLink>Ref Survey</a>
+        <ng-template ngbNavContent>
+            <div class="input-btn">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Enter no. of Items</mat-label>
+                        <input matInput placeholder="1,2,3...n" [(ngModel)]="inputValueRefSurvey"
+                            [ngModelOptions]="{standalone: true}">
+                    </mat-form-field>
+                    <mat-form-field class="select-worksite">
+                        <mat-label>Select Worksite</mat-label>
+                            <mat-select [formControl]="selectedWorksite" name="worksite">
+                                <mat-option *ngFor="let worksite of worksites" [value]="worksite">
+                                {{worksite}}
+                                </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </form>
+                <button class="fetchBtn" (click)="fetchRefSurveyData()" mat-raised-button color="accent"> Fetch
+                    Data</button>
+                    <button mat-raised-button class="clipboard" [cdkCopyToClipboard]="refSurveyData">Copy to
+                        clipboard</button>
+            </div>
+            <div>
+                <textarea cols="30" rows="15" [(ngModel)]="refSurveyData"></textarea><br>
+               
+            </div>
+        </ng-template>
+    </ng-container>
+    <span class="example-spacer"></span>
+    <button class="homeBtn" mat-raised-button (click)="home()" color="primary"><mat-icon>home</mat-icon>Home</button>
+
+</nav>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

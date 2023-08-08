@@ -1,0 +1,39 @@
+textarea {
+    width: 97.5%;
+    margin: 1rem;
+    padding: 20px;
+  }
+  .clipboard {
+    margin-left: 1rem;
+  }
+  .input-btn {
+    margin-left: 1rem;
+    display: flex;
+    height: 3rem;
+
+  }
+  .fetchBtn {
+    align-items: right;
+    margin-left: 1.75rem;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .homeBtn {
+    margin-right: 1rem;
+  }
+
+ .interfaceType{
+   margin-left: 1rem;
+ }
+
+::ng-deep .mat-select-panel {
+  max-width: 12rem;
+  width: 12rem;
+}
+
+.select-worksite{
+  margin-left: 10px;
+}

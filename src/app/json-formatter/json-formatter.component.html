@@ -1,0 +1,16 @@
+    <div class="input-btn">
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Enter JSON Data</mat-label>
+                <input matInput placeholder="{'a':1,'b':2...}" [(ngModel)]="jsonData"
+                    [ngModelOptions]="{standalone: true}"/>
+            </mat-form-field>
+        </form>
+   
+        <button class="fetchBtn" (click)="beautifyJson()" mat-raised-button color="accent"> Beautify JSON</button>
+        <span class="example-spacer"></span>
+    <button class="homeBtn" mat-raised-button (click)="home()" color="primary"><mat-icon>home</mat-icon>Home</button>
+    </div>
+    
+    <div id="dataDisplay">
+    </div>

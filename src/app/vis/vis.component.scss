@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+}
+mat-toolbar {
+  color: rgb(5, 255, 5);
+  background-color: green;
+  // border-radius: 1rem;
+}
+.second {
+  height: 18%;
+  display: flex;
+  background-color: #e2e2e2;
+  justify-content: space-between;
+  align-items: center;
+}
+.worksite-cursorValue {
+  // margin-top: 2rem;
+  margin-left: 4rem;
+  align-items: left;
+  display: flex;
+}
+input {
+  margin-right: 1rem;
+  border: 2px solid black;
+  padding: 4px 10px 4px 10px;
+  background-color: white;
+}
+mat-icon {
+  cursor: pointer;
+}
+
+.date {
+  margin-right: 2rem;
+  // margin-top: 2rem;
+  min-width: 12rem;
+  max-height: 27.33px;
+  border: 2px black solid;
+  background-color: rgb(5, 199, 5);
+}
+
+.date-text {
+  // padding: 4px 10px 4px 10px;
+  margin: 4px 10px 4px 10px;
+  color: black;
+}
+.third {
+  background-color: black;
+  height: 65%;
+  // border-radius: 1rem 1rem 0 0;
+  padding: 20px;
+  color: rgb(5, 255, 5);
+  overflow-y: scroll;
+}
+
+.event {
+  margin-bottom: 30px;
+}
+
+.upsert {
+  color: rgb(5, 255, 5);
+}
+
+.delete {
+  color: rgb(255, 5, 26);
+}
+
+.keep-alive {
+  color: rgb(22, 5, 255);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.homeBtn {
+  justify-content: right;
+}
