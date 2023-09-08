@@ -188,9 +188,9 @@ export class RtTypeComponent implements OnInit {
       'assignment',
     ];
     this.interfacePositionType = ['local', 'wgs'];
-    this.http.get('http://localhost:3000/api/v0/worksite_directory?limit=100&page=1').subscribe((response:any) => {
+    this.http.get('http://localhost:3000/api/v0/2024/worksite_directory?limit=100&page=1').subscribe((response:any) => {
       this.worksites = response.data.map((item:any) =>{
-        return item.worksite_url.split('/').pop()
+        return item.worksite_base_url.split('/').pop()
       });
     })
   }
@@ -200,7 +200,7 @@ export class RtTypeComponent implements OnInit {
       alert('Select the Worksite first');
     }
     else {
-      this.http.get(`http://localhost:3000/api/v0/worksite/${this.selectedWorksite.value}/types/assets?limit=100&page=1`).subscribe((response:any) => {
+      this.http.get(`http://localhost:3000/api/v0/worksite/${this.selectedWorksite.value}/2024/types/assets?limit=100&page=1`).subscribe((response:any) => {
         this.assets = response.data.map((item:any) =>{
           return item.id
         });	
@@ -234,7 +234,7 @@ export class RtTypeComponent implements OnInit {
       alert('Select the Worksite first');
     }
     else {
-      this.http.get(`http://localhost:3000/api/v0/worksite/${this.selectedWorksite.value}/types/assets?limit=100&page=1`).subscribe((response:any) => {
+      this.http.get(`http://localhost:3000/api/v0/worksite/${this.selectedWorksite.value}/2024/types/assets?limit=100&page=1`).subscribe((response:any) => {
         this.assets = response.data.map((item:any) =>{
           return item.id
         });	
@@ -445,7 +445,7 @@ export class RtTypeComponent implements OnInit {
       alert('Select the Worksite first');
     }
     else {
-      this.http.get(`http://localhost:3000/api/v0/worksite/${this.selectedWorksite.value}/types/assets?limit=100&page=1`).subscribe((response:any) => {
+      this.http.get(`http://localhost:3000/api/v0/worksite/${this.selectedWorksite.value}/2024/types/assets?limit=100&page=1`).subscribe((response:any) => {
         this.assets = response.data.map((item:any) =>{
           return item.id
         });	
