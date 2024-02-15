@@ -1,7 +1,7 @@
 /**
  * Each node defines a translation, rotation and scale. The coordinate space is SAE J670, right handed, Z down with front facing in positive X axis. Rotations are applied in the order: roll followed by pitch followed by yaw.
  */
- export interface NodesNode {
+export interface NodesNode {
   /**
    * node id, used for 3 dot and 4 dot reference scheme. Matches ˆ[a-z_]+$.
    */

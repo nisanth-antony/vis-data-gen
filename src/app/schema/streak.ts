@@ -10,7 +10,7 @@ export interface Streak {
    */
   fragments: Array<StreakFragment>;
   /**
-   * abprod_metadata with type=streak
+   * abprod_sor_metadata with type=streak
    */
   meta: AbprodSorMetadata;
 }

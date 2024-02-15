@@ -7,11 +7,11 @@ export interface AbprodSorMetadata {
   /**
    * The id of the Project Data asset produced by this VIS for the asset this meta data refers to.
    */
-  asset: string;
+  asset: CharacterStringUuid;
   /**
-   * A unique id (generated in conformance with IETF RFC 4122, clause 4.3) to identify a message such that the message contents can be reissued by the VIS to SMS.
+   * A unique id (generated in conformance with IETF RFC 4122) to identify a message such that the message contents can be reissued by the VIS to SMS.
    */
-  id: string;
+  id: CharacterStringUuid;
   /**
    * The as-built and production data System-of-Record message types
    */

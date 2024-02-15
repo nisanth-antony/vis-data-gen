@@ -1,3 +1,4 @@
+import { CharacterString255 } from './characterString255';
 import { CharacterStringUuid } from './characterStringUuid';
 
 /**
@@ -9,7 +10,7 @@ export interface AbprodRtMetadata {
    */
   asset: CharacterStringUuid;
   /**
-   * Unless specified otherwise, this is the time at which the event occurred at the machine. It is encoded as the number of milliseconds since the ISO 8601 time epoch.
+   * Unless specified otherwise, this is the time at which the event occurred at the asset. It is encoded as the number of milliseconds since the ISO 8601 time epoch.
    */
   at: number;
   /**
@@ -19,7 +20,7 @@ export interface AbprodRtMetadata {
   /**
    * Semantic version of the schema set.
    */
-  v: string;
+  v: CharacterString255;
 }
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace AbprodRtMetadata {

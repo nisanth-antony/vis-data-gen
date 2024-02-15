@@ -1,7 +1,7 @@
 import { ProjectFileRev } from './projectFileRev';
 
 /**
- * Defines a reference to a Project Data file_entry and a named element within.
+ * Defines a reference to an ISO LandXML Project Data file_entry and a named element within.
  */
 export interface ReferenceObject {
   /**

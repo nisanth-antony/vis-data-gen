@@ -1,7 +1,7 @@
 import { RenderAsset } from './renderAsset';
 
 /**
- * The render-assets interface defines 3d-model assets which relate to nodes in the component such that the machine can be graphically rendered. The 3d-model assets shall be hosted by a VIS which produce them.
+ * The render-assets interface defines 3d-model assets which relate to nodes in the component such that the asset can be graphically rendered. The 3d-model assets shall be hosted by a VIS which produce them.
  */
 export interface InterfaceRenderAssets {
   /**

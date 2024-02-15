@@ -2,7 +2,7 @@ import { TinState } from './tinState';
 import { AbprodSorMetadata } from './abprodSorMetadata';
 
 /**
- * The tin message provides a small Triangulated Irregular Network (TIN) which defines topographic data local to a machine. This may be calculated by edge processing at the machine (such as by scanner hardware, stereo camera depth map on the machine). This message is used to augment working tool as-built information with topographic data available from other machine sensors.
+ * The tin message provides a small Triangulated Irregular Network (TIN) which defines topographic data local to an asset. This may be calculated by edge processing at the machine (such as by scanner hardware, stereo camera depth map on the asset). This message is used to augment working tool as-built information with topographic data available from other machine sensors.
  */
 export interface Tin {
   /**
@@ -14,11 +14,11 @@ export interface Tin {
    */
   faces: Array<Array<number>>;
   /**
-   * abprod_metadata with type=tin
+   * abprod_sor_metadata with type=tin
    */
   meta: AbprodSorMetadata;
   /**
-   * Array of local [N,E,Z] coordinates.
+   * Array of local [N,E,Z] coordinates in meters.
    */
   points: Array<Array<number>>;
   /**

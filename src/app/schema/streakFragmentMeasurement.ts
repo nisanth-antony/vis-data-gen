@@ -1,7 +1,7 @@
 import { StreakShape } from './streakShape';
 
 /**
- * A streak_fragment_measurement is a frame containing position and other attributes for the working tool shapes. The streak_fragment “measurements” field is an array of these measurements, which animate the position and other attributes of the machine and its working tool shapes over time.
+ * A streak_fragment_measurement is a frame containing position and other attributes for the working tool shapes. The streak_fragment “measurements” field is an array of these measurements, which animate the position and other attributes of the asset and its working tool shapes over time.
  */
 export interface StreakFragmentMeasurement {
   /**
@@ -9,11 +9,11 @@ export interface StreakFragmentMeasurement {
    */
   at: number;
   /**
-   * Heading in radians of the machine asset, a yaw of 0 is facing due north with a positive yaw turning the front of the machine to the right
+   * Heading of the machine asset. The azimuth is in radians in the local site cartesian frame, with a positive yaw turning the front of the asset to the right (clockwise).
    */
   h?: number;
   /**
-   * The machine is in reverse gear
+   * The asset is in reverse gear
    */
   reverse?: boolean;
   /**
