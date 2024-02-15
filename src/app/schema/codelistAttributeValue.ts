@@ -1,14 +1,17 @@
+import { CharacterString255 } from './characterString255';
 import { CharacterStringId } from './characterStringId';
 import { Datetime3339 } from './datetime3339';
 
 /**
- * A tuple idenifying a codelist_attribute and a value.
+ * A tuple identifying a codelist_attribute and a value.
  */
 export interface CodelistAttributeValue {
   /**
-   * The id of the codelist_attribute
+   * The ID of the codelist_attribute
    */
-  attribute: string;
-  value: number | string | Datetime3339;
-
+  attribute: CharacterStringId;
+  /**
+   * The value of the attribute
+   */
+  value: number | CharacterString255 | Datetime3339;
 }

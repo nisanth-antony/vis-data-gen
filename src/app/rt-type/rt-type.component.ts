@@ -33,7 +33,7 @@ import { AbprodRtMetadata } from '../schema/abprodRtMetadata';
 import { SurfaceSimulationFunctionIEnum } from '../schema/surfaceSimulationFunctionIEnum';
 import { ReplicateManifestItemInt } from '../schema/replicateManifestItemInt';
 import { ReplicateManifestItemReal } from '../schema/replicateManifestItemReal';
-import { MachineType } from '../schema/machineType';
+import { AssetType } from '../schema/assetType';
 import { InterfaceUnknown } from '../schema/interfaceUnknown';
 import { PositionWgs84 } from '../schema/positionWgs84';
 import { HttpClient } from '@angular/common/http';
@@ -417,11 +417,11 @@ export class RtTypeComponent implements OnInit {
               });
             });
             this.assetConfigResponse = {
-              asset_class: faker.random.arrayElement([MachineType.BackhoeLoader, MachineType.CompactToolCarrier,
-                MachineType.Dozer, MachineType.Driller, MachineType.Dumper, MachineType.Excavator,
-                MachineType.Grader, MachineType.HorizontalDirectionalDrill, MachineType.LandfillCompactor,
-                MachineType.Loader, MachineType.Other, MachineType.Paver, MachineType.Piler, MachineType.PipeLayer,
-                MachineType.Roller, MachineType.Scraper, MachineType.SurveyEquipment, MachineType.Trencher
+              asset_class: faker.random.arrayElement([AssetType.BackhoeLoader, AssetType.CompactToolCarrier,
+                AssetType.Dozer, AssetType.Driller, AssetType.Dumper, AssetType.Excavator,
+                AssetType.Grader, AssetType.HorizontalDirectionalDrill, AssetType.LandfillCompactor,
+                AssetType.Loader, AssetType.Other, AssetType.Paver, AssetType.Piler, AssetType.PipeLayer,
+                AssetType.Roller, AssetType.Scraper, AssetType.SurveyEquipment, AssetType.Trencher
             ]),
               components: [this.components],
               meta: this.abprodRtMeta,

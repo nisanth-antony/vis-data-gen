@@ -1,6 +1,6 @@
 import { AbprodMetadata } from './abprodMetadata';
 import { CharacterString255 } from './characterString255';
-import { MachineType } from './machineType';
+import { AssetType } from './assetType';
 
 /**
  * An asset_info message provides asset identity information to the SMS and other VIS. The abprod_metadata “asset” field is a unique id chosen by the VIS for the asset.
@@ -9,7 +9,7 @@ export interface AssetInfo {
   /**
    * The asset machine type
    */
-  asset_class: MachineType;
+  asset_class: AssetType;
   /**
    * A string used by an end-user to identify a machine
    */

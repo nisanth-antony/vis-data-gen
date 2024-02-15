@@ -1,33 +1,30 @@
-/**
- * Positions a machine relative to the worksite localization. Rotations are applied in the order: roll followed by pitch followed by yaw.
- */
- export interface PositionLocal {
+export interface PositionLocal {
   /**
-   * in meters
+   * Distance in meters
    */
   easting: number;
   /**
-   * in meters
+   * Distance in meters
    */
   elevation: number;
   /**
-   * required for 4 dot value referencing
+   * Required for 4 dot value referencing
    */
   id: string;
   /**
-   * in meters
+   * Distance in meters
    */
   northing: number;
   /**
-   * in radians, a pitch of 0 is a level machine with a positive pitch bringing the front of the machine up.
+   * In radians, a pitch of 0 is a level asset with a positive pitch bringing the front of the asset up.
    */
   pitch: number;
   /**
-   * in radians, a roll of 0 is a level machine with a positive roll tiling the top of the machine to the right.
+   * In radians, a roll of 0 is a level asset with a positive roll tilling the tip of the asset to the right
    */
   roll: number;
   /**
-   * in radians, a yaw of 0 is facing due north with a positive yaw turning the front of the machine to the right.
+   * In radians, a yaw of 0 is facing due north with a positive yaw turning the front of the asset to the right.
    */
   yaw: number;
 }

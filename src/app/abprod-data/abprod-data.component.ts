@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import faker from '@faker-js/faker';
 import { MetaInterface } from '../schema/meta';
-import { AssetInfo } from '../schema/asset-info';
+import { AssetInfo } from '../schema/assetInfo';
 import { Streak } from '../schema/streak';
 import { StreakFragment } from '../schema/streakFragment';
 import { StreakFragmentMeasurement } from '../schema/streakFragmentMeasurement';
