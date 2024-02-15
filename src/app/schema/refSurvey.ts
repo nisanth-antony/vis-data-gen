@@ -3,7 +3,7 @@ import { SurveyState } from './surveyState';
 import { AbprodSorMetadata } from './abprodSorMetadata';
 
 /**
- * A ref_survey message provides a survey by reference to a Project Data file_entry, and an element name within the entry.
+ * A ref_survey message provides a survey by reference to a Project Data file_entry, and an element name within the entry. Survey files may be uploaded to the SMS as detailed in clause F.7 Uploading files.
  */
 export interface RefSurvey {
   /**
@@ -15,7 +15,7 @@ export interface RefSurvey {
    */
   state: SurveyState;
   /**
-   * Reference to a Project Data file and element within, which contains the survey content
+   * Reference to an ISO LandXML Project Data file and element within, which contains the survey content
    */
   survey: ReferenceObject;
 }

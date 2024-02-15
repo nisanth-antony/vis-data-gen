@@ -1,8 +1,11 @@
+import { ReplicateDiscrete } from './replicateDiscrete';
 import { ReplicateManifestItem } from './replicateManifestItem';
 
 export interface ReplicateManifestItemInt extends ReplicateManifestItem {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  discrete: any;
+  /**
+   * Parameters needed for casting integer types (int8, int16, int32).
+   */
+  discrete: ReplicateDiscrete;
   type: ReplicateManifestItemInt.TypeEnum;
 }
 

@@ -1,51 +1,49 @@
-import { CharacterString255 } from './characterString255';
+import { CharacterStringUuid } from './characterStringUuid';
 import { CodelistAttributeValue } from './codelistAttributeValue';
 import { ProjRef } from './projRef';
 
 /**
  * Position and attributes for a surveyed point.
  */
-// eslint-disable-next-line @typescript-eslint/no-namespace
 export interface SurveyPoint {
   /**
    * The time at which the point was surveyed, encoded as the number of milliseconds since the ISO 8601 time epoch
    */
   at: number;
   /**
-   * A frame containing extra attributes. Fields stated in this object shall be from the referenced codelist_code “attributeidrefs”.
+   * Array of id-value pairs of code_list_attributes. This array contains the values set for attributes assigned to category or feature code.
    */
-  /* eslint-disable @typescript-eslint/no-explicit-any */
   attr?: Array<CodelistAttributeValue>;
   /**
    * Horizontal difference between design object and survey point.
    */
   dh?: number;
   /**
-   * Difference between design object and survey point in surface normal direction (applicable only for surface and line reference objects).
+   * Difference in meters between design object and survey point in surface normal direction (applicable only for surface and line reference objects).
    */
   dn?: number;
   /**
-   * Vertical difference between design object and survey point.
+   * Vertical difference in meters between design object and survey point.
    */
   dz?: number;
   /**
-   * Unique survey point identifier
+   * Unique line identifier (in conformance with IETF RFC 4122)
    */
-  id: CharacterString255;
+  id: CharacterStringUuid;
   /**
-   * Unique line identifier: survey points with matching line_id form a line, points are ordered by increasing “at”
+   * Unique line identifier (in conformance with IETF RFC 4122)
    */
-  line_id?: CharacterString255;
+  line_id?: CharacterStringUuid;
   /**
-   * Local [N,E,Z] coordinate
+   * Local [N,E,Z] coordinate in meters
    */
   p: Array<number>;
   /**
    * Overrides state proj_ref for this point.
    */
-  projRef?: ProjRef;
+  proj_ref?: ProjRef;
   /**
-   * An array of 2 numbers: the horizontal and vertical accuracy estimate in meters, within 2 standard deviations
+   * An array of 2 numbers: the horizontal and vertical accuracy estimate in meters, within 1 standard deviation
    */
   q?: Array<number>;
 }

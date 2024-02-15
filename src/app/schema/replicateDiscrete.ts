@@ -1,21 +1,21 @@
 /**
  * Parameters used to quantize (shift and scale) between referenced value and the integer type.
  */
- export interface ReplicateDiscrete {
+export interface ReplicateDiscrete {
   /**
-   * max projects to integer discrete_max.
+   * max projects to integer discrete_max
    */
-  discreteMax: number;
+  discrete_max: number;
   /**
-   * min projects to integer discrete_min.
+   * min projects to integer discrete_min
    */
-  discreteMin: number;
+  discrete_min: number;
   /**
-   * referenced value is clamped to this max.
+   * referenced value is clamped to this max
    */
   max: number;
   /**
-   * referenced value is clamped to this min.
+   * referenced value is clamped to this min
    */
   min: number;
 }

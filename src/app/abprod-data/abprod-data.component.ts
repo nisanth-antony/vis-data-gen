@@ -17,7 +17,7 @@ import { TinState } from '../schema/tinState';
 import { Survey } from '../schema/survey';
 import { SurveyPoint } from '../schema/surveyPoint';
 import { SurveyState } from '../schema/surveyState';
-import { RefSurvey } from '../schema/refSurvery';
+import { RefSurvey } from '../schema/refSurvey';
 import { Router } from '@angular/router';
 import { AbprodSorMetadata } from '../schema/abprodSorMetadata';
 import { CodelistAttributeValue } from '../schema/codelistAttributeValue';
@@ -398,7 +398,7 @@ export class AbprodDataComponent implements OnInit {
               parseInt(faker.address.latitude()),
               parseInt(faker.address.longitude()),
             ],
-            projRef: this.projRef,
+            proj_ref: this.projRef,
             q: [
               faker.random.number({ min: 1, max: 10 }),
               faker.random.number({ min: 1, max: 10 }),

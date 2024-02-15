@@ -1,7 +1,7 @@
 /**
  * Either an axis-aligned-bounding-box (aabb) or sphere relative to a referenced nodes_node.
  */
- export interface CollisionShape {
+export interface CollisionShape {
   /**
    * in meters, shape center x, in relation to node_ref.
    */
@@ -31,9 +31,9 @@
    */
   id: string;
   /**
-   * 3 dot object refernce to a nodes_node. Matches ˆiso\\.nodes\\.[a-z_]+$.
+   * 3 dot object reference to a nodes_node. Matches ˆiso\\.nodes\\.[a-z_]+$.
    */
-  nodeRef: string;
+  node_ref: string;
   /**
    * in meters, radius, required for type=“sphere”.
    */

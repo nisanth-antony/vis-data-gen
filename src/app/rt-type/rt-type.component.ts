@@ -288,7 +288,7 @@ export class RtTypeComponent implements OnInit {
           };
           this.poiPoint = {
             id: faker.random.uuid(),
-            nodeRef: faker.random.uuid(),
+            node_ref: faker.random.uuid(),
             tx: faker.random.number({ min: 1, max: 1000 }),
             ty: faker.random.number({ min: 1, max: 1000 }),
             tz: faker.random.number({ min: 1, max: 1000 }),
@@ -305,7 +305,7 @@ export class RtTypeComponent implements OnInit {
             hey: faker.random.number({ min: 1, max: 1000 }),
             hez: faker.random.number({ min: 1, max: 1000 }),
             id: faker.random.uuid(),
-            nodeRef: faker.random.uuid(),
+            node_ref: faker.random.uuid(),
             radius: faker.random.number({ min: 1, max: 100 }),
             type: faker.random.arrayElement([CollisionShape.TypeEnum.Aabb, CollisionShape.TypeEnum.Sphere]),
           };
@@ -315,11 +315,11 @@ export class RtTypeComponent implements OnInit {
           };
           this.asbuiltConstant = {
             _function: faker.random.arrayElement([AsbuiltConstant.FunctionEnum.Cv, AsbuiltConstant.FunctionEnum.Temp]),
-            valueRef: faker.random.uuid(),
+            value_ref: faker.random.uuid(),
           };
           this.vertices = {
             constants: [this.asbuiltConstant],
-            pointRef: faker.random.uuid(),
+            point_ref: faker.random.uuid(),
           };
           this.asBuiltShapes = {
             functions: [ faker.random.arrayElement([AsbuiltShape.FunctionsEnum.Cv,AsbuiltShape.FunctionsEnum.Height,
@@ -339,16 +339,15 @@ export class RtTypeComponent implements OnInit {
             shapes: [this.asBuiltShapes],
           };
           this.replicateDiscrete = {
-            discreteMax: faker.random.number({ min: 1, max: 10 }),
-            discreteMin: faker.random.number({ min: 1, max: 10 }),
+            discrete_max: faker.random.number({ min: 1, max: 10 }),
+            discrete_min: faker.random.number({ min: 1, max: 10 }),
             max: faker.random.number({ min: 1, max: 100 }),
             min: faker.random.number({ min: 1, max: 100 }),
           };
           this.replicateManifestItem = {
-            discrete: this.replicateDiscrete,
             type: faker.random.arrayElement([ReplicateManifestItem.TypeEnum.Double, ReplicateManifestItem.TypeEnum.Float,
                 ReplicateManifestItem.TypeEnum.Int16, ReplicateManifestItem.TypeEnum.Int32, ReplicateManifestItem.TypeEnum.Int8]),
-            valueRef: faker.random.uuid(),
+            value_ref: faker.random.uuid(),
           };
           this.interfaceReplicate = {
             interface_type: 'iso.replicate',
@@ -362,15 +361,15 @@ export class RtTypeComponent implements OnInit {
           };
           this.renderResource = {
             href: 'href',
-            mimeType: 'model/vnd.collada+xml',
+            mime_type: 'model/vnd.collada+xml',
           };
           this.renderShape = {
-            assetTransform: 'assetTransform',
+            asset_transform: 'assetTransform',
             asx: faker.random.number({ min: 0, max: 100 }),
             asy: faker.random.number({ min: 0, max: 100 }),
             asz: faker.random.number({ min: 0, max: 100 }),
             id: faker.random.uuid(),
-            nodeRef: faker.random.uuid(),
+            node_ref: faker.random.uuid(),
             sx: faker.random.number({ min: 0, max: 100 }),
             sy: faker.random.number({ min: 0, max: 100 }),
             sz: faker.random.number({ min: 0, max: 100 }),
@@ -393,7 +392,7 @@ export class RtTypeComponent implements OnInit {
             this.interfaceNodes,
             this.interfacePointsOfInterest,
             this.interfaceCollisionShapes,
-            // this.interfaceAsbuiltShapes,
+            this.interfaceAsbuiltShapes,
             this.interfaceReplicate,
             this.interfaceAttach,
             this.interfaceRenderAssets,

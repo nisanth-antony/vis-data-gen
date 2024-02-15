@@ -24,7 +24,7 @@ export interface Component {
     | InterfaceNodes
     | InterfacePointsOfInterest
     | InterfaceCollisionShapes
-    // | InterfaceAsbuiltShapes
+    | InterfaceAsbuiltShapes
     | InterfaceReplicate
     | InterfaceAttach
     | InterfaceRenderAssets

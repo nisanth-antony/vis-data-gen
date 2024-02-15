@@ -1,7 +1,6 @@
 import { CharacterStringUuid } from './characterStringUuid';
 import { ProjRef } from './projRef';
 import { PurposeEnum } from './purposeEnum';
-import { QualSt } from './qualSt';
 import { ShapeConfiguration } from './shapeConfiguration';
 import { SensorQuality } from './sensorQuality';
 
@@ -14,17 +13,17 @@ export interface StreakFragmentState {
    */
   id?: CharacterStringUuid;
   /**
-   * Contains references to objects in project data such as the working material.
+   * Contains references to objects in Project Data such as the working material.
    */
   proj_ref?: ProjRef;
   /**
-   * Contains references to objects in Project Data such as the working material.
+   * A statement relating to the purpose of the measurement work being done.
    */
   purpose_st?: string;
   /**
-   * A statement relating to the quality of the geospatial measurements within the fragment expressed by identifying the set of position technologies used in sensor aggregation.
+   * A statement relating to the quality of the geospatial measurements within the fragment expressed by identifying used positioning technology.
    */
-   sensor_quality?: SensorQuality;
+  sensor_quality?: SensorQuality;
   /**
    * Defines the working tool configuration for the fragment. The length of the array S is equal to the number of working tools.
    */

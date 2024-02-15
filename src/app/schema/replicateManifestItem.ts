@@ -1,13 +1,7 @@
-import { ReplicateDiscrete } from './replicateDiscrete';
-
 /**
  * A 4 dot value reference to be byte packed or unpacked.
  */
 export interface ReplicateManifestItem {
-  /**
-   * Parameters needed for casting integer types (int8, int16, int32).
-   */
-  discrete?: ReplicateDiscrete;
   /**
    * The value is cast to and from this type for byte packing.
    */
@@ -15,7 +9,7 @@ export interface ReplicateManifestItem {
   /**
    * 4 dot value reference, which supplies the value to replicate.
    */
-  valueRef: string;
+  value_ref: string;
 }
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace ReplicateManifestItem {

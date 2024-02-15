@@ -1,7 +1,7 @@
 /**
  * Maps a 4 dot referenced value to an as-built function such as “temp”.
  */
- export interface AsbuiltConstant {
+export interface AsbuiltConstant {
   /**
    * As-built function.
    */
@@ -9,7 +9,7 @@
   /**
    * 4 dot value reference, which supplies the value for the as-built function at this vertex. Matches ˆ[a-z_]+\\.[a-z_]+\\.[a-z_]+\\.[a-z_]+$.
    */
-  valueRef: string;
+  value_ref: string;
 }
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace AsbuiltConstant {
