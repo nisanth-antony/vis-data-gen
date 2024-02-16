@@ -19,7 +19,7 @@ export interface StreakFragmentState {
   /**
    * A statement relating to the purpose of the measurement work being done.
    */
-  purpose_st?: string;
+  purpose_st?: PurposeEnum;
   /**
    * A statement relating to the quality of the geospatial measurements within the fragment expressed by identifying used positioning technology.
    */

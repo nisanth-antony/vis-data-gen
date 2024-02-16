@@ -7,5 +7,5 @@ export interface IcSensorInfo {
   /**
    * The kind of IC sensor
    */
-  kind: string;
+  kind: IcSensorKindEnum;
 }

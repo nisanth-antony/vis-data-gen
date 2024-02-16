@@ -8,7 +8,7 @@ import { Component as ComponentSchema } from '../schema/component';
 import { ModelInterface } from '../schema/modelInterface';
 import { InterfacePosition } from '../schema/interfacePosition';
 import { PositionLocal } from '../schema/positionLocal';
-import { PositionWgs } from '../schema/positionWgs';
+import { PositionWgs84 } from '../schema/positionWgs84';
 import { InterfaceNodes } from '../schema/interfaceNodes';
 import { NodesNode } from '../schema/nodesNode';
 import { InterfacePointsOfInterest } from '../schema/interfacePointsOfInterest';
@@ -35,8 +35,10 @@ import { ReplicateManifestItemInt } from '../schema/replicateManifestItemInt';
 import { ReplicateManifestItemReal } from '../schema/replicateManifestItemReal';
 import { AssetType } from '../schema/assetType';
 import { InterfaceUnknown } from '../schema/interfaceUnknown';
-import { PositionWgs84 } from '../schema/positionWgs84';
 import { HttpClient } from '@angular/common/http';
+import { CollisionShapeAabb } from '../schema/collisionShapeAabb';
+import { CollisionShapeSphere } from '../schema/collisionShapeSphere';
+import { ComponentTypeEnum } from '../schema/componentTypeEnum';
 
 @Component({
   selector: 'app-rt-type',
@@ -81,7 +83,7 @@ export class RtTypeComponent implements OnInit {
   interfacePointsOfInterest!: InterfacePointsOfInterest;
   poiPoint!: PoiPoint;
   interfaceCollisionShapes!: InterfaceCollisionShapes;
-  shapes!: CollisionShape;
+  shapes!: CollisionShapeAabb | CollisionShapeSphere;
   collisionShape!: string[];
   interfaceAsbuiltShapes!: InterfaceAsbuiltShapes;
   asBuiltShapes!: AsbuiltShape;
@@ -401,7 +403,7 @@ export class RtTypeComponent implements OnInit {
           ];
     
           this.components = {
-            component_type: ComponentSchema.ComponentTypeEnum.MainBody,
+            component_type: ComponentTypeEnum.MainBody,
             interfaces: [],
           };
           if (this.selectedInterface.value == null || this.selectedInterface?.value?.length === 0)

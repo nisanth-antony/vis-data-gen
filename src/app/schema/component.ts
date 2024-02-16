@@ -1,3 +1,4 @@
+import { ComponentTypeEnum } from './componentTypeEnum';
 import { InterfaceAsbuiltShapes } from './interfaceAsbuiltShapes';
 import { InterfaceAttach } from './interfaceAttach';
 import { InterfaceCollisionShapes } from './interfaceCollisionShapes';
@@ -9,13 +10,13 @@ import { InterfaceReplicate } from './interfaceReplicate';
 import { InterfaceUnknown } from './interfaceUnknown';
 
 /**
- * An asset_configuration is defined as a collection of components. The main body of a machine is represented by a component. Accordingly, an asset_configuration shall contain at least one component. Implements which may be changed, such as an excavator bucket, may be represented by further components.
+ * An asset_configuration is defined as a collection of components. The main body of an asset is represented by a component. Accordingly, an asset_configuration shall contain at least one component. Implements which may be changed, such as an excavator bucket, may be represented by further components.
  */
 export interface Component {
   /**
-   * A registered name for the category of component. TODO: subject to MA.
+   * A registered name for the category of component.
    */
-  component_type: Component.ComponentTypeEnum;
+  component_type: ComponentTypeEnum;
   /**
    * The set of interface which define the component.
    */
@@ -30,11 +31,4 @@ export interface Component {
     | InterfaceRenderAssets
     | InterfaceUnknown
   >;
-}
-// eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace Component {
-  export type ComponentTypeEnum = 'main_body';
-  export const ComponentTypeEnum = {
-    MainBody: 'main_body' as ComponentTypeEnum
-  };
 }

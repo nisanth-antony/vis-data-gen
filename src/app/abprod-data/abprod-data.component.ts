@@ -28,6 +28,8 @@ import { SurfaceModellingFunctionEnum } from '../schema/surfaceModellingFunction
 import { SurfaceSimulationFunctionEnum } from '../schema/surfaceSimulationFunctionEnum';
 import { CharacterString255 } from '../schema/characterString255';
 import { WorkingToolEffectEnum } from '../schema/workingToolEffectEnum';
+import { IcSensorKindEnum } from '../schema/icSensorKindEnum';
+import { SensorQuality } from '../schema/sensorQuality';
 
 @Component({
   selector: 'app-abprod-data',
@@ -57,11 +59,11 @@ export class AbprodDataComponent implements OnInit {
   streakShape!: StreakShape;
   streakFragmentState!: StreakFragmentState;
   projRef!: ProjRef;
-  purposeSt!: string[];
-  sensorQuality!: string[];
+  purposeSt!: PurposeEnum[];
+  sensorQuality!: SensorQuality[];
   shapeConfiguration!: ShapeConfiguration;
   icSensorInfo!: IcSensorInfo;
-  icSensorKindEnum!: string[];
+  icSensorKindEnum!: IcSensorKindEnum[];
   referenceObject!: ReferenceObject;
   projectFileRev!: ProjectFileRev;
   surfaceSimulationFunctionEnum!: string[];
@@ -207,7 +209,7 @@ export class AbprodDataComponent implements OnInit {
         };
         this.projectFileRev = {
           id: faker.random.uuid(),
-          rev: 'revision',
+          rev: faker.date.soon(),
         };
         this.referenceObject = {
           element_name: 'referenceObjectElementName',
@@ -290,7 +292,7 @@ export class AbprodDataComponent implements OnInit {
           }
           this.projectFileRev = {
             id: faker.random.uuid(),
-            rev: 'revision',
+            rev: faker.date.soon(),
           };
           this.referenceObject = {
             element_name: 'referenceObjectElementName',
@@ -364,7 +366,7 @@ export class AbprodDataComponent implements OnInit {
           };
           this.projectFileRev = {
             id: faker.random.uuid(),
-            rev: 'revision',
+            rev: faker.date.soon(),
           };
           this.referenceObject = {
             element_name: 'referenceObjectElementName',
@@ -446,7 +448,7 @@ export class AbprodDataComponent implements OnInit {
       };
       this.projectFileRev = {
         id: faker.random.uuid(),
-        rev: 'revision',
+        rev: faker.date.soon(),
       };
       this.referenceObject = {
         element_name: 'referenceObjectElementName',
