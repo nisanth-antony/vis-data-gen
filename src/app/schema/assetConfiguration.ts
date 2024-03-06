@@ -16,11 +16,11 @@ export interface AssetConfiguration {
    */
   components: Array<Component>;
   /**
+   * Uniquely identifies the asset_configuration. This shall be a new UUID for any change (such as implement or calibration change) made to the asset_configuration. SMS and VIS may use this as a caching key. This does not identify an asset, but identifies a unique configuration and calibration of an asset.
+   */
+  id: CharacterStringUuid;
+  /**
    * abprod_rt_metadata with type=asset_configuration
    */
   meta: AbprodRtMetadata;
-  /**
-   * Uniquely identifies the asset_configuration. This shall be a new UUID for any change (such as implement or calibration change) made to the asset_configuration. SMS and VIS may use this as a caching key. This does not identify an asset, but identifies a unique configuration and calibration of an asset.
-   */
-  uuid: CharacterStringUuid;
 }

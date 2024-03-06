@@ -426,7 +426,7 @@ export class RtTypeComponent implements OnInit {
             ]),
               components: [this.components],
               meta: this.abprodRtMeta,
-              uuid: faker.random.uuid(),
+              id: faker.random.uuid(),
             };
             this.multipleAssetConfigResponse.push(this.assetConfigResponse);
           }

@@ -1,6 +1,9 @@
 import { CollisionShape } from './collisionShape';
 
 export interface CollisionShapeSphere extends CollisionShape {
+  /**
+   * In meters, radius
+   */
   radius: number;
   type: CollisionShapeSphere.TypeEnum;
 }
