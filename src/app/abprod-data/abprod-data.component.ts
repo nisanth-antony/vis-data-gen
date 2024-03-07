@@ -236,7 +236,7 @@ export class AbprodDataComponent implements OnInit {
         this.shapeConfiguration = {
           ic_sensors: [this.icSensorInfo],
           n: 3,
-          smf: faker.random.arrayElement([SurfaceModellingFunctionEnum.Cv, SurfaceModellingFunctionEnum.Height, SurfaceModellingFunctionEnum.Pass, SurfaceModellingFunctionEnum.Temp])
+          smf: [faker.random.arrayElement([SurfaceModellingFunctionEnum.Cv, SurfaceModellingFunctionEnum.Height, SurfaceModellingFunctionEnum.Pass, SurfaceModellingFunctionEnum.Temp])]
         };
         this.streakFragmentState = {
           id: faker.random.uuid(),

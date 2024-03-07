@@ -40,6 +40,10 @@ import { CollisionShapeAabb } from '../schema/collisionShapeAabb';
 import { CollisionShapeSphere } from '../schema/collisionShapeSphere';
 import { ComponentTypeEnum } from '../schema/componentTypeEnum';
 import { SurfaceModellingFunctionEnumRt } from '../schema/surfaceModellingFunctionEnumRt';
+import { ProjRefRt } from '../schema/projRefRt';
+import { ReferenceObjectRt } from '../schema/referenceObjectRt';
+import { ProjectFileRevRt } from '../schema/projectFileRevRt';
+import { CodelistAttributeValueRt } from '../schema/codelistAttributeValueRt';
 
 @Component({
   selector: 'app-rt-type',
@@ -56,6 +60,10 @@ export class RtTypeComponent implements OnInit {
   projectType!: string[];
 
   //State
+  projRefRt!: ProjRefRt;
+  projectFileRev!: ProjectFileRevRt;
+  referenceObject!: ReferenceObjectRt;
+  codelistAttributeValue!: CodelistAttributeValueRt;
   stateData!: string;
   inputValueState!: number;
   stateResponse!: State;
@@ -216,13 +224,30 @@ export class RtTypeComponent implements OnInit {
             type: 'state',
             v: 'version'
           };
+          this.projectFileRev = {
+            id: faker.random.uuid(),
+            rev: faker.date.soon(),
+          };
+          this.referenceObject = {
+            element_name: 'referenceObjectElementName',
+            file: this.projectFileRev,
+          };
+          this.codelistAttributeValue = {
+            attribute: 'codelistAttributeValue',
+            value: 'valueProperty'
+          }
           this.stateResponse = {
             meta: this.abprodRtMeta,
-            ns: 'pd',
-            s: this.projectType[
-              Math.floor(Math.random() * this.projectType.length)
-            ],
-            v: faker.random.uuid(),
+            projRefRt: {
+              attributes: [this.codelistAttributeValue],
+              category_code: 'categoryCode',
+              code_list: faker.random.uuid(),
+              feature_code: 'featureCode',
+              material: faker.random.uuid(),
+              operator: faker.random.uuid(),
+              reference_object: this.referenceObject,
+              work_order: faker.random.uuid(),
+            }
           };
           this.multipleStateResponse.push(this.stateResponse);
         }
