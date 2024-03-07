@@ -24,10 +24,9 @@ import { CodelistAttributeValue } from '../schema/codelistAttributeValue';
 import { PurposeEnum } from '../schema/purposeEnum';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { SurfaceModellingFunctionEnum } from '../schema/surfaceModellingFunctionEnum';
-import { SurfaceSimulationFunctionEnum } from '../schema/surfaceSimulationFunctionEnum';
+import { SurfaceModellingConditionEnum } from '../schema/surfaceModellingConditionEnum';
 import { CharacterString255 } from '../schema/characterString255';
-import { WorkingToolEffectEnum } from '../schema/workingToolEffectEnum';
+import { SurfaceModellingFunctionEnum } from '../schema/surfaceModellingFunctionEnum';
 import { IcSensorKindEnum } from '../schema/icSensorKindEnum';
 import { SensorQuality } from '../schema/sensorQuality';
 
@@ -192,7 +191,7 @@ export class AbprodDataComponent implements OnInit {
             [10, 12],
             [13, 14],
           ],
-          smf: faker.random.arrayElement([SurfaceSimulationFunctionEnum.False, SurfaceSimulationFunctionEnum.HasCurrent, SurfaceSimulationFunctionEnum.HigherAndHasCurrent, SurfaceSimulationFunctionEnum.HigherOrNoCurrent, SurfaceSimulationFunctionEnum.LowerAndHasCurrent, SurfaceSimulationFunctionEnum.LowerOrNoCurrent, SurfaceSimulationFunctionEnum.True
+          smc: faker.random.arrayElement([SurfaceModellingConditionEnum.False, SurfaceModellingConditionEnum.HasExisting, SurfaceModellingConditionEnum.HigherAndHasExisting, SurfaceModellingConditionEnum.HigherOrNoExisting, SurfaceModellingConditionEnum.LowerAndHasExisting, SurfaceModellingConditionEnum.LowerOrNoExisting, SurfaceModellingConditionEnum.True
           ]),
           t: [32.0],
           va: faker.random.number({ min: 1, max: 10 }),
@@ -222,8 +221,8 @@ export class AbprodDataComponent implements OnInit {
         this.projRef = {
           attributes: [this.codelistAttributeValue],
           category_code: 'categoryCode',
-          code: 'code',
           code_list: faker.random.uuid(),
+          feature_code: 'featureCode',
           material: faker.random.uuid(),
           operator: faker.random.uuid(),
           reference_object: this.referenceObject,
@@ -237,7 +236,7 @@ export class AbprodDataComponent implements OnInit {
         this.shapeConfiguration = {
           ic_sensors: [this.icSensorInfo],
           n: 3,
-          wte: faker.random.arrayElement([WorkingToolEffectEnum.Cv, WorkingToolEffectEnum.Height, WorkingToolEffectEnum.Pass, WorkingToolEffectEnum.Temp])
+          smf: faker.random.arrayElement([SurfaceModellingFunctionEnum.Cv, SurfaceModellingFunctionEnum.Height, SurfaceModellingFunctionEnum.Pass, SurfaceModellingFunctionEnum.Temp])
         };
         this.streakFragmentState = {
           id: faker.random.uuid(),
@@ -306,8 +305,8 @@ export class AbprodDataComponent implements OnInit {
           this.projRef = {
             attributes: [this.codelistAttributeValue],
             category_code: 'categoryCode',
-            code: 'code',
             code_list: faker.random.uuid(),
+            feature_code: 'featureCode',
             material: faker.random.uuid(),
             operator: faker.random.uuid(),
             reference_object: this.referenceObject,
@@ -380,8 +379,8 @@ export class AbprodDataComponent implements OnInit {
           this.projRef = {
             attributes: [this.codelistAttributeValue],
             category_code: 'categoryCode',
-            code: 'code',
             code_list: faker.random.uuid(),
+            feature_code: 'featureCode',
             material: faker.random.uuid(),
             operator: faker.random.uuid(),
             reference_object: this.referenceObject,
@@ -462,8 +461,8 @@ export class AbprodDataComponent implements OnInit {
       this.projRef = {
         attributes: [this.codelistAttributeValue],
         category_code: 'categoryCode',
-        code: 'code',
         code_list: faker.random.uuid(),
+        feature_code: 'featureCode',
         material: faker.random.uuid(),
         operator: faker.random.uuid(),
         reference_object: this.referenceObject,

@@ -1,3 +1,6 @@
+/**
+ * This enumeration defines how a working tool shape should effect a machine measured surface.
+ */
 export type SurfaceModellingFunctionEnum = 'height' | 'pass' | 'temp' | 'cv';
 
 export const SurfaceModellingFunctionEnum = {

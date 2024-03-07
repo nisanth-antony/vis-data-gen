@@ -1,4 +1,4 @@
-import { SurfaceSimulationFunctionEnum } from './surfaceSimulationFunctionEnum';
+import { SurfaceModellingConditionEnum } from './surfaceModellingConditionEnum';
 
 /**
  * A streak_shape defines the positions and attributes for a working tool shape, within a streak_fragment_measurement.
@@ -17,19 +17,19 @@ export interface StreakShape {
    */
   ncv?: Array<number>;
   /**
-   * An array of length N (the number of measured points along the working tool). Each entry p[j] is an array of 3 numbers, giving the local [N,E,Z] coordinates for measured point j.
+   * An array of length N matching shape_configuration n (the number of measured points along the working tool). Each entry p[j] is an array of 3 numbers, giving the local [N,E,Z] coordinates for measured point j.
    */
   p?: Array<Array<number>>;
   /**
-   * An array of 2 numbers, the horizontal and vertical accuracy within 2 standard deviations. These apply to all measured points.
+   * An array of 2 numbers, the horizontal and vertical accuracy within 1 standard deviation. These apply to all measured points.
    */
   q?: Array<Array<number>>;
   /**
-   * Surface Simulation Function indicates how the shape shall be applied to a simulated surface.
+   * Surface Modelling Function indicates how the shape shall be applied to a machine measured surface. A null value indicates that the shape must not be applied.
    */
-  smf?: SurfaceSimulationFunctionEnum;
+  smc?: SurfaceModellingConditionEnum;
   /**
-   * An array of length N (the number of measured points along the working tool). Each entry t[j] is a number giving a temperature measured in degrees Celsius for measured point j.
+   * An array of length N matching shape_configuration n (the number of measured points along the working tool). Each entry t[j] is a number giving a temperature measured in degrees Celsius for measured point j.
    */
   t?: Array<number>;
   /**

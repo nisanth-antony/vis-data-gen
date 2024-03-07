@@ -1,28 +1,28 @@
-import { CharacterString255 } from './characterString255';
 import { CharacterStringId } from './characterStringId';
+import { CharacterString4 } from './characterString4';
 import { ReferenceObject } from './referenceObject';
 import { CodelistAttributeValue } from './codelistAttributeValue';
 
 /**
- * Contains references to project data objects.
+ * Contains references to Project Data objects.
  */
 export interface ProjRef {
   /**
-   * Values of the used code_list codelist_attributes
+   * Array of id-value pairs of code_list codelist_attributes. This array contains the values set for attributes assigned to category or feature code
    */
   attributes?: Array<CodelistAttributeValue>;
   /**
    * Reference to the code_list codelist_code by name
    */
-  category_code?: string;
-  /**
-   * Reference to the code_list codelist_code by name
-   */
-  code?: CharacterString255;
+  category_code?: CharacterString4;
   /**
    * Reference to a Project Data codelist
    */
   code_list?: CharacterStringId;
+  /**
+   * Reference to the code_list codelist_code by name
+   */
+  feature_code?: CharacterString4;
   /**
    * Reference to a Project Data material
    */
@@ -32,7 +32,7 @@ export interface ProjRef {
    */
   operator?: CharacterStringId;
   /**
-   * Reference to a Project Data file and element within
+   * Reference to an ISO LandXML Project Data file and element within
    */
   reference_object?: ReferenceObject;
   /**

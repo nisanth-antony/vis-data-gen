@@ -1,9 +1,9 @@
 import { IcSensorInfo } from './icSensorInfo';
-import { WorkingToolEffectEnum } from './workingToolEffectEnum';
+import { SurfaceModellingFunctionEnum } from './surfaceModellingFunctionEnum';
 
 export interface ShapeConfiguration {
   /**
-   * Optional array defining IC sensors
+   * Optional array defining the set of unique IC sensor kinds for the working tool
    */
   ic_sensors?: Array<IcSensorInfo>;
   /**
@@ -11,7 +11,7 @@ export interface ShapeConfiguration {
    */
   n: number;
   /**
-   *  Describes how the working tool shape eects a simulated surface.
+   * Describes how the working tool shape affects a simulated surface. A null value indicates that the shape must not affect the surface
    */
-  wte: WorkingToolEffectEnum;
+  smf: Array<SurfaceModellingFunctionEnum>;
 }
