@@ -1,40 +1,33 @@
 import { AsbuiltVertex } from './asbuiltVertex';
-import { SurfaceSimulationFunctionIEnum } from './surfaceSimulationFunctionIEnum';
+import { SurfaceModellingFunctionIEnum } from './surfaceModellingFunctionIEnum';
+import { SurfaceModellingFunctionEnumRt } from './surfaceModellingFunctionEnumRt';
 
 /**
- * Either a “line” or “quad” shape. A “line” shape is useful to represent leading cutting edge of buckets, or the bottom of roller drums etc. A “quad” shape is useful to represent larger footprints such as the bottom of tracks etc. [**TODO: This seems at variance to the definition of “shape” in the System of Record stream in terms of geometry and also in terms of effect. Should the reasons for this be clarified, or should the MFK “shape” be made more consistent with the DOR shape definition?]
+ * A geometry description of a working tool.
  */
 export interface AsbuiltShape {
   /**
-   * The set of surface modeling functions which shall be updated by this as-built shape. “height” comes from point_ref; “pass” (passcount) is implied; others shall be mapped with constants in the vertices.
+   * The set of surface modelling functions which shall be updated by this as-built shape. “height” comes from point_ref; “pass” (passcount) is implied; others shall be mapped with constants in the vertices.
    */
-  functions: Array<AsbuiltShape.FunctionsEnum>;
+  functions: Array<SurfaceModellingFunctionEnumRt>;
   /**
-   * shape id, used for 3 dot and 4 dot reference scheme. Matches ˆ[a-z_]+$.
+   * shape id, used for 3 dot and 4 dot reference scheme.
    */
   id: string;
   /**
-   * Surface Simulation Function, may be replicated to indicate how the shape shall be applied to a simulated surface.
+   * Surface Modelling Function, may be replicated to indicate how the shape shall be applied to a simulated surface.
    */
-  ssf: SurfaceSimulationFunctionIEnum;
+  smf: SurfaceModellingFunctionIEnum;
   type: AsbuiltShape.TypeEnum;
   /**
-   * 2 or 4 vertices for type=“line” and type=“quad” respectively.
+   * 2 vertices for type=“line”.
    */
   vertices: Array<AsbuiltVertex>;
 }
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace AsbuiltShape {
-  export type FunctionsEnum = 'height' | 'pass' | 'temp' | 'cv';
-  export const FunctionsEnum = {
-    Height: 'height' as FunctionsEnum,
-    Pass: 'pass' as FunctionsEnum,
-    Temp: 'temp' as FunctionsEnum,
-    Cv: 'cv' as FunctionsEnum
-  };
-  export type TypeEnum = 'line' | 'quad';
+  export type TypeEnum = 'line';
   export const TypeEnum = {
-    Line: 'line' as TypeEnum,
-    Quad: 'quad' as TypeEnum
+    Line: 'line' as TypeEnum
   };
 }

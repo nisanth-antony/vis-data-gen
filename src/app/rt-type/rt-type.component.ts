@@ -30,7 +30,7 @@ import { RenderResource } from '../schema/renderResource';
 import { FormControl } from '@angular/forms';
 import { AbprodSorMetadata } from '../schema/abprodSorMetadata';
 import { AbprodRtMetadata } from '../schema/abprodRtMetadata';
-import { SurfaceSimulationFunctionIEnum } from '../schema/surfaceSimulationFunctionIEnum';
+import { SurfaceModellingFunctionIEnum } from '../schema/surfaceModellingFunctionIEnum';
 import { ReplicateManifestItemInt } from '../schema/replicateManifestItemInt';
 import { ReplicateManifestItemReal } from '../schema/replicateManifestItemReal';
 import { AssetType } from '../schema/assetType';
@@ -39,6 +39,7 @@ import { HttpClient } from '@angular/common/http';
 import { CollisionShapeAabb } from '../schema/collisionShapeAabb';
 import { CollisionShapeSphere } from '../schema/collisionShapeSphere';
 import { ComponentTypeEnum } from '../schema/componentTypeEnum';
+import { SurfaceModellingFunctionEnumRt } from '../schema/surfaceModellingFunctionEnumRt';
 
 @Component({
   selector: 'app-rt-type',
@@ -267,9 +268,7 @@ export class RtTypeComponent implements OnInit {
           };
           this.interfacePosition = {
             interface_type: 'iso.position',
-            local: this.positionLocal,
-            type: faker.random.arrayElement([InterfacePosition.TypeEnum.Local, InterfacePosition.TypeEnum.Wgs84]),
-            wgs84: this.positionWgs,
+            position: this.positionLocal,
           };
           this.nodes = {
             id: faker.random.uuid(),
@@ -324,16 +323,16 @@ export class RtTypeComponent implements OnInit {
             point_ref: faker.random.uuid(),
           };
           this.asBuiltShapes = {
-            functions: [ faker.random.arrayElement([AsbuiltShape.FunctionsEnum.Cv,AsbuiltShape.FunctionsEnum.Height,
-                AsbuiltShape.FunctionsEnum.Pass, AsbuiltShape.FunctionsEnum.Temp
+            functions: [ faker.random.arrayElement([SurfaceModellingFunctionEnumRt.Cv,SurfaceModellingFunctionEnumRt.Height,
+                SurfaceModellingFunctionEnumRt.Pass, SurfaceModellingFunctionEnumRt.Temp
             ])
             ],
             id: faker.random.uuid(),
-            ssf: faker.random.arrayElement([SurfaceSimulationFunctionIEnum.NUMBER_0, SurfaceSimulationFunctionIEnum.NUMBER_1,
-                SurfaceSimulationFunctionIEnum.NUMBER_2, SurfaceSimulationFunctionIEnum.NUMBER_3, SurfaceSimulationFunctionIEnum.NUMBER_4,
-                SurfaceSimulationFunctionIEnum.NUMBER_5, SurfaceSimulationFunctionIEnum.NUMBER_6
+            smf: faker.random.arrayElement([SurfaceModellingFunctionIEnum.NUMBER_0, SurfaceModellingFunctionIEnum.NUMBER_1,
+              SurfaceModellingFunctionIEnum.NUMBER_2, SurfaceModellingFunctionIEnum.NUMBER_3, SurfaceModellingFunctionIEnum.NUMBER_4,
+              SurfaceModellingFunctionIEnum.NUMBER_5, SurfaceModellingFunctionIEnum.NUMBER_6
             ]),
-            type: faker.random.arrayElement([AsbuiltShape.TypeEnum.Line,AsbuiltShape.TypeEnum.Quad]),
+            type: faker.random.arrayElement([AsbuiltShape.TypeEnum.Line,AsbuiltShape.TypeEnum.Line]),
             vertices: [this.vertices],
           };
           this.interfaceAsbuiltShapes = {
